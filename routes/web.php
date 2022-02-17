@@ -18,3 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('blog', [BlogController::class, 'blog'])->name('blog');
+Route::get('blogfrom', [BlogController::class, 'blogfrom'])->name('blogfrom');
+Route::post('/createblog', [BlogFromsController::class, 'blogstore'])->name('blog_store');

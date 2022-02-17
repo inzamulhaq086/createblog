@@ -9,4 +9,10 @@ class BlogController extends Controller
     public function blog(){
         return view('blog');
     }
+    public function blogfrom(){
+        return view('blogform');
+    }
+    public function blogstore(Request $request){
+        
+    }
 }
