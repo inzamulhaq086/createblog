@@ -11,11 +11,10 @@
                                 Create Blog
                             </div>
                             <div class="p-3">
-                                <form class="w-full" method="POST" action="{{route('')}}"
+                                <form class="w-full" method="POST" action="{{route('blogstore')}}"
                                     enctype="multipart/form-data">
                                     @csrf
-                                    <input type="hidden" name="_token" value="r7mkP9dbyhCuhoGs92FO4Kg6306wJEcIzzC0WLKS">
-                                    <input type="hidden" value="">
+                           
                                     <div class="flex flex-wrap -mx-3 mb-6">
                                         <div class="w-full px-4">
                                             <div class="mt-1">
@@ -30,6 +29,42 @@
                                             <div class="mt-1">
                                                 <label
                                                     class="py-2 block uppercase tracking-wide text-gray-700 text-xs font-light mb-1">
+                                                    Colors
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                                    name="color" type="text" placeholder="Please write here your color">
+                                            </div>
+                                            <div class="mt-1">
+                                                <label
+                                                    class="py-2 block uppercase tracking-wide text-gray-700 text-xs font-light mb-1">
+                                                    Code
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                                    name="code" type="text" placeholder="Please write here your code">
+                                            </div>
+                                            <div class="mt-1">
+                                                <label
+                                                    class="py-2 block uppercase tracking-wide text-gray-700 text-xs font-light mb-1">
+                                                    Price
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                                    name="price" type="text" placeholder="Please write here your price">
+                                            </div>
+                                            <div class="mt-1">
+                                                <label
+                                                    class="py-2 block uppercase tracking-wide text-gray-700 text-xs font-light mb-1">
+                                                    Size
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full  text-grey-darker border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white-500 focus:border-gray-600"
+                                                    name="size" type="text" placeholder="Please write here your size">
+                                            </div>
+                                            <div class="mt-1">
+                                                <label
+                                                    class="py-2 block uppercase tracking-wide text-gray-700 text-xs font-light mb-1">
                                                     Discriptions
                                                 </label>
                                                 <textarea id="about" name="discription" rows="6"
@@ -40,7 +75,7 @@
                                                 <label class="py-2 block text-sm font-medium text-gray-700">
                                                     Cover photo
                                                 </label>
-                                                <img class="w-20" src="" alt="">
+                                                {{-- <img class="w-20" src="" alt=""> --}}
                                                 <div
                                                     class="mt-1 flex justify-center px-6 pt-7 pb-8 border-2 border-gray-300 border-dashed rounded-md">
                                                     <div class="space-y-1 text-center">
@@ -57,7 +92,7 @@
                                                             <label for="file-upload"
                                                                 class="relative cursor-pointer bg-white rounded-md font-medium text-green-600 hover:text-green-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-500">
                                                                 <span>Upload a file</span>
-                                                                <input id="file-upload" name="cover_img" type="file"
+                                                                <input id="file-upload" name="images" type="file"
                                                                     class="sr-only">
                                                             </label>
                                                             <p class="pl-1">or drag and drop</p>

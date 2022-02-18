@@ -9,11 +9,13 @@ class Createblog extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'title',
+        'discription',
+        'color',
+        'price',
+        'code',
+        'size',
         'images',
-        'message',
     ];
 
 }
