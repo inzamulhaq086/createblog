@@ -16,6 +16,19 @@
                             <a href="{{ route('blogfrom') }}" class="bg-green-500 px-6 py-3  inline-block">Create</a>
                         </div>
                     </div>
+                    @if (session('SUCCESS'))
+                        <div id="successMessage"
+                            class="px-4 py-2 m-4 max-w-3xl mx-auto text-center text-gray-500 border border-green-600 bg-green-600">
+                            {{ session('SUCCESS') }}
+                        </div>
+                    @endif
+
+                    @if (session('ERROR'))
+                        <div id="successMessage"
+                            class="px-4 py-2 m-4 max-w-3xl mx-auto text-center text-white border border-red-600 bg-red-600">
+                            {{ session('ERROR') }}
+                        </div>
+                    @endif
                     @if (!empty($createblogs))
                         <div class="flex flex-wrap">
                             @foreach ($createblogs as $createblog)
@@ -25,16 +38,37 @@
                                             <div class="relative">
                                                 <img class=" object-contain w-full"
                                                     src="{{ asset('storage/' . $createblog->images) }}" alt="bag" />
-                                                <button aria-label="close"
-                                                    class="top-4 right-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 absolute p-1.5 bg-green-600 hover:bg-green-400 text-white ">
-                                                    <svg class="fil-current" width="14" height="14" viewBox="0 0 14 14"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M13 1L1 13" stroke="currentColor" stroke-width="1.25"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                        <path d="M1 1L13 13" stroke="currentColor" stroke-width="1.25"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg>
-                                                </button>
+                                                <div class="top-4 right-4 absolute space-y-2">
+                                                    <a href="{{ route('copyblog', $createblog->id) }}"
+                                                        class=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 block p-1.5 bg-green-600 hover:bg-green-400 text-white ">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class=""
+                                                            width="14" height="14" fill="none" viewBox="0 0 24 24"
+                                                            stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                                        </svg>
+                                                    </a>
+                                                    <a href="{{ route('editblog', $createblog->id) }}"
+                                                        class=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 block p-1.5 bg-green-600 hover:bg-green-400 text-white ">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class=""
+                                                            width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path
+                                                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                                        </svg>
+                                                    </a>
+                                                    <a href="{{ route('deleteblog', $createblog->id) }}"
+                                                        class=" focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 block p-1.5 bg-green-600 hover:bg-green-400 text-white ">
+                                                        <svg class="fil-current" width="14" height="14"
+                                                            viewBox="0 0 14 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13 1L1 13" stroke="currentColor" stroke-width="1.25"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M1 1L13 13" stroke="currentColor" stroke-width="1.25"
+                                                                stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </a>
+                                                </div>
                                             </div>
                                             <div class="mt-6 flex justify-between items-center">
                                                 <div class="flex justify-center items-center">
